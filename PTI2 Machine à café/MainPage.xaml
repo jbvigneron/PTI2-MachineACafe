@@ -1,0 +1,147 @@
+﻿<UserControl
+	xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+	xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+	xmlns:d="http://schemas.microsoft.com/expression/blend/2008" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+	x:Class="PTI2_Machine_à_café.MainPage"
+	Width="580" Height="630" mc:Ignorable="d" Loaded="UserControl_Loaded">
+	<UserControl.Resources>
+		<Storyboard x:Name="versement">
+			<DoubleAnimationUsingKeyFrames BeginTime="00:00:00" Storyboard.TargetName="boissonDescend" Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[0].(ScaleTransform.ScaleY)">
+				<EasingDoubleKeyFrame KeyTime="00:00:00" Value="1"/>
+				<EasingDoubleKeyFrame KeyTime="00:00:01" Value="207.333"/>
+				<EasingDoubleKeyFrame KeyTime="00:00:03" Value="208"/>
+				<EasingDoubleKeyFrame KeyTime="00:00:03.5000000" Value="88.833"/>
+			</DoubleAnimationUsingKeyFrames>
+			<DoubleAnimationUsingKeyFrames BeginTime="00:00:00" Storyboard.TargetName="boissonDescend" Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[3].(TranslateTransform.Y)">
+				<EasingDoubleKeyFrame KeyTime="00:00:00" Value="0"/>
+				<EasingDoubleKeyFrame KeyTime="00:00:01" Value="104.583"/>
+				<EasingDoubleKeyFrame KeyTime="00:00:03" Value="104.416"/>
+				<EasingDoubleKeyFrame KeyTime="00:00:03.5000000" Value="163.917"/>
+			</DoubleAnimationUsingKeyFrames>
+			<DoubleAnimationUsingKeyFrames BeginTime="00:00:00" Storyboard.TargetName="boissonLever" Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[0].(ScaleTransform.ScaleY)">
+				<EasingDoubleKeyFrame KeyTime="00:00:01" Value="-1"/>
+				<EasingDoubleKeyFrame KeyTime="00:00:03.5000000" Value="-89.5"/>
+			</DoubleAnimationUsingKeyFrames>
+			<DoubleAnimationUsingKeyFrames BeginTime="00:00:00" Storyboard.TargetName="boissonLever" Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[3].(TranslateTransform.Y)">
+				<EasingDoubleKeyFrame KeyTime="00:00:01" Value="0"/>
+				<EasingDoubleKeyFrame KeyTime="00:00:03.5000000" Value="-45.083"/>
+			</DoubleAnimationUsingKeyFrames>
+		</Storyboard>
+		<Storyboard x:Name="versementSucre">
+			<DoubleAnimationUsingKeyFrames BeginTime="00:00:00" Storyboard.TargetName="sucreDescend" Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[3].(TranslateTransform.Y)">
+				<EasingDoubleKeyFrame KeyTime="00:00:00" Value="0"/>
+				<EasingDoubleKeyFrame KeyTime="00:00:00.1000000" Value="3.375"/>
+				<EasingDoubleKeyFrame KeyTime="00:00:00.5000000" Value="209.083"/>
+			</DoubleAnimationUsingKeyFrames>
+			<DoubleAnimationUsingKeyFrames BeginTime="00:00:00" Storyboard.TargetName="sucreDescend" Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[0].(ScaleTransform.ScaleY)">
+				<EasingDoubleKeyFrame KeyTime="00:00:00" Value="1"/>
+				<EasingDoubleKeyFrame KeyTime="00:00:00.1000000" Value="7.75"/>
+				<EasingDoubleKeyFrame KeyTime="00:00:00.5000000" Value="7.083"/>
+			</DoubleAnimationUsingKeyFrames>
+		</Storyboard>
+		<Storyboard x:Name="glisserGobelet">
+			<DoubleAnimationUsingKeyFrames BeginTime="00:00:00" Storyboard.TargetName="gobelet" Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[3].(TranslateTransform.X)">
+				<EasingDoubleKeyFrame KeyTime="00:00:00" Value="0"/>
+				<EasingDoubleKeyFrame KeyTime="00:00:01" Value="-180"/>
+			</DoubleAnimationUsingKeyFrames>
+			<DoubleAnimationUsingKeyFrames BeginTime="00:00:00" Storyboard.TargetName="gobelet" Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[3].(TranslateTransform.Y)">
+				<EasingDoubleKeyFrame KeyTime="00:00:00" Value="0"/>
+				<EasingDoubleKeyFrame KeyTime="00:00:01" Value="-1"/>
+			</DoubleAnimationUsingKeyFrames>
+		</Storyboard>
+	</UserControl.Resources>
+
+	<Grid x:Name="LayoutRoot" Background="#FF682304">
+		<Grid.RowDefinitions>
+			<RowDefinition Height="0.343*"/>
+			<RowDefinition Height="0.657*"/>
+		</Grid.RowDefinitions>
+		<Rectangle x:Name="sortie" Stroke="Black" Margin="45,18,289,182" Grid.Row="1">
+			<Rectangle.Fill>
+				<LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+					<GradientStop Color="#FF989898" Offset="1"/>
+					<GradientStop Color="White"/>
+				</LinearGradientBrush>
+			</Rectangle.Fill>
+		</Rectangle>
+		<RadioButton x:Name="boutonOn" Height="17" HorizontalAlignment="Left" Margin="8,8,0,0" VerticalAlignment="Top" Width="52" Content="On" Foreground="White" FontWeight="Bold" Click="boutonOn_Click" />
+		<RadioButton x:Name="boutonOff" HorizontalAlignment="Right" Margin="0,8,481,0" VerticalAlignment="Top" Content="Off" Height="17" Foreground="White" FontWeight="Bold" IsChecked="True" Click="boutonOff_Click" />
+		<Rectangle x:Name="rectangleAfficheur" Fill="black" Stroke="Black" Margin="28,74,279,70"/>
+		<TextBlock x:Name="afficheurHaut" Margin="34,80,289,0" Text="afficheurHaut" TextWrapping="Wrap" Foreground="#FF1FFF00" FontSize="24" FontFamily="Fonts/Fonts.zip#DS-Digital" Height="23" VerticalAlignment="Top"/>
+        <Slider Height="58" HorizontalAlignment="Left" Margin="393,0,0,-8" x:Name="scrollSucre" VerticalAlignment="Bottom" Width="127" Maximum="6" Value="3" Cursor="Hand" />
+		<Rectangle x:Name="sucreDescend" Fill="#FFF8F8F8" Height="1" HorizontalAlignment="Left" Margin="130,19,0,0" VerticalAlignment="Top" Width="8" RenderTransformOrigin="0.5,0.5" Grid.Row="1">
+			<Rectangle.RenderTransform>
+				<TransformGroup>
+					<ScaleTransform/>
+					<SkewTransform/>
+					<RotateTransform/>
+					<TranslateTransform/>
+				</TransformGroup>
+			</Rectangle.RenderTransform>
+		</Rectangle>
+		<Rectangle x:Name="boissonDescend" Height="1" HorizontalAlignment="Left" Margin="172,18,0,0" VerticalAlignment="Top" Width="10" RenderTransformOrigin="0.5,0.5" RadiusX="4.333" RadiusY="4.333" Grid.Row="1">
+			<Rectangle.RenderTransform>
+				<TransformGroup>
+					<ScaleTransform/>
+					<SkewTransform/>
+					<RotateTransform/>
+					<TranslateTransform/>
+				</TransformGroup>
+			</Rectangle.RenderTransform>
+		</Rectangle>
+		<Rectangle x:Name="gobelet" HorizontalAlignment="Right" Margin="0,118,187,182" Width="93" RenderTransformOrigin="0.5,0.5" Grid.Row="1" Fill="{x:Null}" Stroke="Black">
+			<Rectangle.RenderTransform>
+				<TransformGroup>
+					<ScaleTransform ScaleY="-1"/>
+					<SkewTransform/>
+					<RotateTransform/>
+					<TranslateTransform/>
+				</TransformGroup>
+			</Rectangle.RenderTransform>
+		</Rectangle>
+		<Rectangle x:Name="gobelet2" HorizontalAlignment="Left" Margin="120,117,0,183" Width="93" RenderTransformOrigin="0.5,0.5" Grid.Row="1" Fill="{x:Null}" Stroke="Black">
+			<Rectangle.RenderTransform>
+				<TransformGroup>
+					<ScaleTransform ScaleY="-1"/>
+					<SkewTransform/>
+					<RotateTransform/>
+					<TranslateTransform/>
+				</TransformGroup>
+			</Rectangle.RenderTransform>
+		</Rectangle>
+		<Rectangle x:Name="masque" Fill="#FF6A2607" HorizontalAlignment="Right" Margin="0,87,166,182" Width="123" Grid.Row="1"/>
+		<Rectangle x:Name="boissonLever" Height="1" HorizontalAlignment="Left" Margin="121,0,0,186" VerticalAlignment="Bottom" Width="91" RenderTransformOrigin="0.5,0.5" Grid.Row="1">
+			<Rectangle.RenderTransform>
+				<TransformGroup>
+					<ScaleTransform/>
+					<SkewTransform/>
+					<RotateTransform/>
+					<TranslateTransform/>
+				</TransformGroup>
+			</Rectangle.RenderTransform>
+		</Rectangle>
+		<Button x:Name="boutonCafe" Height="35" HorizontalAlignment="Left" Margin="321,40,0,0" VerticalAlignment="Top" Width="105" Content="Café" Cursor="Hand" Grid.Row="1" Click="boutonCafe_Click" />
+		<Button x:Name="boutonChocolat" Height="35" HorizontalAlignment="Right" Margin="0,40,31,0" VerticalAlignment="Top" Width="105" Content="Chocolat" Cursor="Hand" Grid.Row="1" Click="boutonChocolat_Click" />
+		<Button x:Name="boutonTomates" HorizontalAlignment="Right" Margin="0,118,154,0" Width="105" Content="Potage Tomates" Cursor="Hand" Height="35" VerticalAlignment="Top" Grid.Row="1" Click="boutonTomates_Click" />
+		<Button x:Name="boutonLait" HorizontalAlignment="Right" Margin="0,79,31,0" Width="105" Content="Lait" Height="35" VerticalAlignment="Top" Grid.Row="1" Click="boutonLait_Click" />
+		<Button x:Name="boutonCapuccino" HorizontalAlignment="Right" Margin="0,79,154,0" Width="105" Content="Capuccino" Cursor="Hand" Height="35" VerticalAlignment="Top" Grid.Row="1" Click="boutonCapuccino_Click" />
+		<Button x:Name="boutonEau" Height="35" HorizontalAlignment="Right" Margin="0,118,31,0" VerticalAlignment="Top" Width="105" Content="Eau" Cursor="Hand" Grid.Row="1" Click="boutonEau_Click" />
+		<TextBlock Height="14" HorizontalAlignment="Right" Margin="0,0,187,14" VerticalAlignment="Bottom" Width="45" Text="Sucre:" TextWrapping="Wrap" FontWeight="Bold" Foreground="White"/>
+		<Rectangle Margin="46,0,0,183" Grid.Row="1" Fill="#FF7B7777" Height="4" VerticalAlignment="Bottom" HorizontalAlignment="Left" Width="244" />
+		<Button x:Name="boutonServir" Height="23" Margin="108,0,0,141" VerticalAlignment="Bottom" Content="Se servir" Grid.Row="1" HorizontalAlignment="Left" Width="120" Visibility="Collapsed" Click="boutonServir_Click" />
+		<TextBlock x:Name="afficheurBas" Margin="34,0,289,79" Text="afficheurBas" TextWrapping="Wrap" Foreground="#FF1FFF00" FontSize="24" FontFamily="Fonts/Fonts.zip#DS-Digital" Height="23" VerticalAlignment="Bottom"/>
+		<Rectangle Stroke="Black" HorizontalAlignment="Right" Margin="0,46,69,79" Width="145" Fill="Black"/>
+		<Image x:Name="piece5centimes" Height="40" HorizontalAlignment="Right" Margin="0,51,166,0" VerticalAlignment="Top" Width="40" Source="5centimes.png" Cursor="Hand" Visibility="Collapsed" MouseLeftButtonDown="piece5centimes_MouseLeftButtonDown" />
+		<Image x:Name="piece10centimes" Height="40" HorizontalAlignment="Right" Margin="0,51,122,0" VerticalAlignment="Top" Width="40" Source="10centimes.png" Cursor="Hand" Visibility="Collapsed" MouseLeftButtonDown="piece10centimes_MouseLeftButtonDown" />
+		<Image x:Name="piece20centimes" Height="40" HorizontalAlignment="Right" Margin="0,51,78,0" VerticalAlignment="Top" Width="40" Source="20centimes.png" Cursor="Hand" Visibility="Collapsed" MouseLeftButtonDown="piece20centimes_MouseLeftButtonDown" />
+		<Image x:Name="piece50centimes" HorizontalAlignment="Right" Margin="0,94,166,82" Width="40" Source="50centimes.png" Cursor="Hand" Visibility="Collapsed" MouseLeftButtonDown="piece50centimes_MouseLeftButtonDown" />
+		<Image x:Name="piece1euro" HorizontalAlignment="Right" Margin="0,94,122,82" Width="40" Source="1euro.png" Cursor="Hand" Visibility="Collapsed" MouseLeftButtonDown="piece1euro_MouseLeftButtonDown" />
+		<Image x:Name="piece2euros" HorizontalAlignment="Right" Margin="0,94,78,82" Width="40" Source="2euros.png" Cursor="Hand" Visibility="Collapsed" MouseLeftButtonDown="piece2euros_MouseLeftButtonDown" />
+		<Button x:Name="boutonInsererMonnaie" Height="22" HorizontalAlignment="Right" Margin="0,82,78,0" VerticalAlignment="Top" Width="128" Content="Insérer la monnaie" Cursor="Hand" Click="boutonInsererMonnaie_Click" />
+		<TextBlock Height="16" HorizontalAlignment="Right" Margin="0,170,84,0" VerticalAlignment="Top" Width="145" Grid.Row="1" Text="Rendu monnaie:" TextWrapping="Wrap" Foreground="White" FontWeight="Bold"/>
+		<ListBox x:Name="listeRenduMonnaie" HorizontalAlignment="Right" Margin="0,190,55,105" Width="174" Grid.Row="1"/>
+		<Button x:Name="boutonRendreMonnaie" Margin="0,0,78,53" Content="Rendre la monnaie" Cursor="Hand" Height="22" HorizontalAlignment="Right" VerticalAlignment="Bottom" Width="128" Click="boutonRendreMonnaie_Click" />
+		<CheckBox x:Name="cbGobelet" Height="20" HorizontalAlignment="Right" Margin="0,12,104,0" VerticalAlignment="Top" Width="83" Content="Gobelet" Grid.Row="1" IsChecked="True" FontWeight="Bold" Foreground="White" Click="cbGobelet_Click" />
+		<Button x:Name="boutonInsererGobelet" Visibility="Collapsed" Height="23" HorizontalAlignment="Left" Margin="104,0,0,141" VerticalAlignment="Bottom" Width="124" Content="Insérer votre gobelet" Grid.Row="1" Cursor="Hand" Click="boutonInsererGobelet_Click" />
+    </Grid>
+</UserControl>
