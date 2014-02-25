@@ -1,0 +1,29 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2010
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PTI2 Machine à café", "PTI2 Machine à café\PTI2 Machine à café.csproj", "{AFDDF0A1-23F8-4962-8507-5C757CFCD799}"
+EndProject
+Global
+	GlobalSection(TeamFoundationVersionControl) = preSolution
+		SccNumberOfProjects = 2
+		SccEnterpriseProvider = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
+		SccTeamFoundationServer = http://epsilab.arras.epsi.fr:8080/tfs/jbvigneron
+		SccLocalPath0 = .
+		SccProjectUniqueName1 = PTI2\u0020Machine\u0020à\u0020café\\PTI2\u0020Machine\u0020à\u0020café.csproj
+		SccProjectName1 = PTI2\u0020Machine\u0020à\u0020café
+		SccLocalPath1 = PTI2\u0020Machine\u0020à\u0020café
+	EndGlobalSection
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{AFDDF0A1-23F8-4962-8507-5C757CFCD799}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AFDDF0A1-23F8-4962-8507-5C757CFCD799}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AFDDF0A1-23F8-4962-8507-5C757CFCD799}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AFDDF0A1-23F8-4962-8507-5C757CFCD799}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
